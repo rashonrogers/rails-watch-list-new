@@ -1,1 +1,5 @@
-<%= @lists.name %>
+<ul><% @lists.each do |list| %>
+    <li><%= link_to list_path(list.id) do %>
+        <%= list.name %>
+      <% end %></li>
+  <% end %></ul>
