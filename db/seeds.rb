@@ -8,6 +8,8 @@ require 'json'
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+
+
 url = "http://tmdb.lewagon.com/movie/top_rated"
 10.times do |i|
   puts "Importing movies from page #{i + 1}"
