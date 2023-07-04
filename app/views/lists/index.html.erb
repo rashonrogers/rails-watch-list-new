@@ -1,7 +1,5 @@
-<div class="col-lg-4">
-  <ul><% @lists.each do |list| %>
-      <li><%= link_to list_path(list.id) do %>
-          <%= list.name %>
-        <% end %></li>
-    <% end %></ul>
-</div>
+<ul><% @lists.each do |list| %>
+    <li><%= link_to list_path(list.id) do %>
+        <%= list.name %>
+      <% end %></li>
+  <% end %></ul>
