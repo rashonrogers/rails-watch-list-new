@@ -1,7 +1,7 @@
 <div class='container'>
   <h1>Movie Lists</h1>
   <div class='card-container'>
-    <div class="row scrollable">
+    <div class="column scrollable">
       <% @lists.each do |list| %>
         <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>)">
           <%= link_to list_path(list) do%>
@@ -12,6 +12,6 @@
         </div>
       <% end %>
     </div>
-    <%= link_to 'Add a list', new_list_path, class: 'btn-light text-decoration-none'%>
+    <%= link_to 'Add a list', new_list_path, class: 'btn-light text-decoration-none text-white add-list' %>
   </div>
 </div>

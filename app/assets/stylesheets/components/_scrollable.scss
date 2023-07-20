@@ -1,8 +1,26 @@
 .scrollable {
-  flex-grow: 1; /* mandatory */
-  overflow-x: auto; /* mandatory */
+  // flex-grow: 1; /* mandatory */
+  // overflow-x: auto; /* mandatory */
+  // max-height: 500px;
+  // border-radius: 15px;
+  // border: 1px rgb(200, 200, 200) solid;
+  // padding: 1em;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
   max-height: 500px;
   border-radius: 15px;
   border: 1px rgb(200, 200, 200) solid;
   padding: 1em;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: #aaa;
 }
