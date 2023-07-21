@@ -4,7 +4,7 @@ class BookmarksController < ApplicationController
 
   def new
     @bookmark = Bookmark.new
-    @movies = Movie.all
+    # @movies = Movie.all
   end
 
   def create
