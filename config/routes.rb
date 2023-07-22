@@ -17,10 +17,16 @@ get 'lists/new', to: 'lists#new', as: :new_list
 get 'lists/:id', to: 'lists#show', as: :list
 delete 'lists/:id', to: 'lists#destroy'
 
-post 'lists/:id/bookmarks', to: 'bookmarks#create', as: :list_bookmarks
-get 'lists/:id/bookmarks/new', to: 'bookmarks#new', as: :new_bookmark
+# post 'lists/:id/bookmarks', to: 'bookmarks#create', as: :list_bookmarks
+# get 'lists/:id/bookmarks/new', to: 'bookmarks#new', as: :new_bookmark
+# delete 'bookmarks/:id', to: 'bookmarks#destroy'
+# end
+
+post 'movies/:id/bookmarks', to: 'bookmarks#create', as: :movie_bookmarks
+get 'movies/:id/bookmarks/new', to: 'bookmarks#new', as: :new_bookmark
 delete 'bookmarks/:id', to: 'bookmarks#destroy'
 end
+
 
 Rails.application.routes.draw do
   resources :articles

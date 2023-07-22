@@ -1,10 +1,10 @@
 class BookmarksController < ApplicationController
   before_action :set_bookmark, only: :destroy
-  before_action :set_list, only: %i[new create]
+  before_action :set_movie, only: %i[new create]
 
   def new
     @bookmark = Bookmark.new
-    # @movies = Movie.all
+    @list = List.all
   end
 
   def create
@@ -34,5 +34,9 @@ class BookmarksController < ApplicationController
 
   def set_list
     @list = List.find(params[:id])
+  end
+
+  def set_movie
+    @movie = Movie.find(params[:id])
   end
 end
