@@ -7,25 +7,32 @@ class BookmarksController < ApplicationController
     @list = List.all
   end
 
+  def show
+    @movie = Movie.find(params[:id])
+  end
+
   def create
     @bookmark = Bookmark.new(bookmark_params)
-    @bookmark.list = @list
+    @bookmark.movie = @movie
+    logger.debug(@bookmark.movie_id)
+    logger.debug(@bookmark.list_id)
     if @bookmark.save
-      redirect_to list_path(@list)
+      redirect_to list_path(@bookmark.list)
     else
       render :new
     end
   end
 
   def destroy
+    list = @bookmark.list
     @bookmark.destroy
-    redirect_to list_path(@list)
+    redirect_to list_path(list)
   end
 
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:comment, :movie_id)
+    params.require(:bookmark).permit(:comment, :list_id)
   end
 
   def set_bookmark

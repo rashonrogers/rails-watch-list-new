@@ -24,7 +24,7 @@ delete 'lists/:id', to: 'lists#destroy'
 
 post 'movies/:id/bookmarks', to: 'bookmarks#create', as: :movie_bookmarks
 get 'movies/:id/bookmarks/new', to: 'bookmarks#new', as: :new_bookmark
-delete 'bookmarks/:id', to: 'bookmarks#destroy'
+delete 'bookmarks/:id', to: 'bookmarks#destroy', as: :delete_bookmark
 end
 
 
